@@ -1,10 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export", // Enables static export (required for GitHub Pages)
+  basePath: "/Dashboard", // Set to your GitHub repo name
+  images: {
+    unoptimized: true, // Fixes image issues for static hosting
+  },
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // Allows builds to pass even with ESLint errors
   },
 };
 
